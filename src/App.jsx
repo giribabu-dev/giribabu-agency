@@ -1,13 +1,16 @@
-import Navbar from "./components/Navbar";
 import { useState } from 'react';
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
 
   const [theme, setTheme] = useState(localStorage.getItem('agency-theme') ? localStorage.getItem('agency-theme') : 'light');
 
   return (
-    <div className="darK:bg-black relative">
+    <div className="dark:bg-black relative">
       <Navbar theme={theme} setTheme={setTheme} />
+      <Hero />
     </div>
   )
 }
