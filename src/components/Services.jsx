@@ -1,4 +1,5 @@
 import assets from "../assets/assets";
+import ServiceCard from "./ServiceCard";
 
 function Services() {
 
@@ -35,6 +36,12 @@ function Services() {
             <p className='max-w-lg text-center text-gray-500 dark:text-white/75 mb-6'>
                 From strategy to execution, we craft digital solutions that move your business forward.
             </p>
+
+            <div className='flex flex-col md:grid grid-cols-2'>
+                {servicesData.map((service, index) => (
+                    <ServiceCard key={index} service={service} index={index} />
+                ))}
+            </div>
         </div>
     )
 }
