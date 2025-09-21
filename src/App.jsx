@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import TrustedBy from './components/TrustedBy';
 import Services from "./components/Services";
 import Works from './components/Works';
+import Teams from './components/Teams';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <TrustedBy />
       <Services />
       <Works />
+      <Teams />
     </div>
   )
 }
