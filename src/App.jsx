@@ -6,6 +6,7 @@ import TrustedBy from './components/TrustedBy';
 import Services from "./components/Services";
 import Works from './components/Works';
 import Teams from './components/Teams';
+import ContactUs from './components/ContactUs';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Services />
       <Works />
       <Teams />
+      <ContactUs />
     </div>
   )
 }
