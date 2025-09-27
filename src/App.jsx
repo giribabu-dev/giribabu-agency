@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Works from './components/Works';
 import Teams from './components/Teams';
 import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Works />
       <Teams />
       <ContactUs />
+      <Footer theme={theme} />
     </div>
   )
 }
