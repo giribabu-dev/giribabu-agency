@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 import assets from "../assets/assets";
 import ToggleTheme from './ToggleTheme';
@@ -8,7 +9,11 @@ function Navbar({ theme, setTheme }) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
 
     return (
-        <div className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium
             bg-white/50 dark:bg-gray-900/70">
 
             <img src={theme == 'dark' ? assets.logo_dark : assets.logo} alt="Logo" className="w-32 sm:w-40 cursor-pointer" />
@@ -38,7 +43,7 @@ function Navbar({ theme, setTheme }) {
                     Connect <img src={assets.arrow_icon} alt="" width={14} />
                 </a>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
