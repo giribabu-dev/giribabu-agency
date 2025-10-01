@@ -1,5 +1,6 @@
 import assets from "../assets/assets";
 import toast from "react-hot-toast";
+import { motion } from "motion/react";
 
 function ContactUs() {
 
@@ -33,15 +34,38 @@ function ContactUs() {
     };
 
     return (
-        <div id="contact-us"
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.2 }}
+            id="contact-us"
             className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
 
-            <h2 className='text-3xl sm:text-5xl font-medium'>React out to us</h2>
-            <p className='max-w-lg text-center text-gray-500 dark:text-white/75 mb-6'>
-                From strategy to execution, we craft digital solutions that move your business forward.
-            </p>
+            <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className='text-3xl sm:text-5xl font-medium'>
+                React out to us
+            </motion.h2>
 
-            <form onSubmit={handleSubmitForm}
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className='max-w-lg text-center text-gray-500 dark:text-white/75 mb-6'>
+                From strategy to execution, we craft digital solutions that move your business forward.
+            </motion.p>
+
+            <motion.form
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                onSubmit={handleSubmitForm}
                 className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
                 <div>
                     <p className='mb-2 text-sm font-medium'>Your name</p>
@@ -86,8 +110,8 @@ function ContactUs() {
                     hover:scale-103 transition-all'>
                     Submit <img src={assets.arrow_icon} alt="" className='w-4' />
                 </button>
-            </form>
-        </div>
+            </motion.form>
+        </motion.div>
     )
 }
 
